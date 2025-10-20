@@ -1,6 +1,5 @@
 import {Input} from 'antd'
 import {uploadFile,mergeFile} from '../../api/file'
-import SparkMD5 from 'spark-md5'
 const AgentFile = () => {
     const getChunk = (file:File) => {
         const chunkSize = 1024 * 1024
@@ -10,26 +9,22 @@ const AgentFile = () => {
         }
         return chunks
     }
-    const getHash=(file:Blob[])=>{
-        const chunks  = [] as Blob[]
-        file.forEach((chunk,index)=>{
-            if(index === 0||index === file.length-1){
-               chunks.push(chunk)
-            }
-           else {
-                chunks.push(file.slice(0,2))
-                chunks.push(file.slice(file.length-2,file.length))
-                chunks.push(file.slice(file.length/2,file.length/2+2))
-             }
-        })
-        const spark = new SparkMD5.ArrayBuffer()
-        const reader = new FileReader()
-        reader.readAsArrayBuffer(new Blob(chunks))
-        reader.onload = (e) => {
-            spark.append(e.target?.result)
-        }
-        return spark.end()
-    }
+const getHashByWorker = (chunks: Blob[]): Promise<string> => {
+  return new Promise((resolve) => {
+    const worker = new Worker(new URL('./hashWorker.ts', import.meta.url));
+    worker.postMessage({ chunks }); // 把分片发送给 worker
+
+    worker.onmessage = (e) => {
+      const { hash, progress } = e.data;
+      if (progress) console.log('hash进度', progress); // 可以更新进度条
+      if (hash) {
+        worker.terminate(); // 计算完成，关闭 worker
+        resolve(hash);      // 返回最终 hash
+      }
+    };
+  });
+};
+  
     const uploadChunk =async (chunk:Blob[],hash:string)=>{
         const data = new FormData()
           chunk.forEach(async (item,index)=>{
@@ -50,7 +45,7 @@ const AgentFile = () => {
             const file = e.target.files?.[0]
             if(file){
                 const chunks = getChunk(file)
-                 const hash = getHash(chunks)
+                 const hash = await getHashByWorker(chunks)
                 await uploadChunk(chunks,hash)
                 await merge(hash,file.name)
             }
