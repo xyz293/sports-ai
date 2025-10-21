@@ -10,7 +10,7 @@ const ActivityPage = () => {
             case true:
                 return <Activity setId={setId} setIsShow={setIsShow} />
             case false:
-                return <ActivityDetail id={id} />
+                return <ActivityDetail id={id} setIsShow={setIsShow}/>
         }
     }
     return (

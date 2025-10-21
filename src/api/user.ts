@@ -35,3 +35,12 @@ export const login = (data:LoginInfo) => {
         }
     })
 }
+export const Verify = () => {
+    return request({
+        url:'/user/verify',
+        method:'post',
+        data:{
+            
+        }
+    })
+}

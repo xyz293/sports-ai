@@ -10,3 +10,17 @@ export const Aichat =(data:AichatInfo)=>{
         }
     })
 }
+export const getAiMessage = (id: number) => {
+  // 格式化为 MySQL 能识别的 "YYYY-MM-DD HH:mm:ss"
+  const now = new Date()
+  const time = now.toISOString().slice(0, 19).replace('T', ' ')
+
+  return request({
+    url: '/message/AImessage',
+    method: 'post',
+    data: {
+      user_id: id,
+      time
+    }
+  })
+}

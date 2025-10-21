@@ -1,14 +1,14 @@
 import {Form,Input,Button} from 'antd'
 import type {LoginInfo } from '../../type/user'
-import {useContext,useState} from 'react'
-import {ContentContexts} from '../../uilts/content'
+import {useState} from 'react'
 import {login} from '../../api/user'
 import useUserStore from '../../store/index'
 interface LoginProps{
     setIsLogin:(isLogin:boolean)=>void
+    setIsshow:(isshow:boolean)=>void
 }
-const Login = ({setIsLogin}:LoginProps) => {
-    const {setIsshow} = useContext(ContentContexts)
+const Login = ({setIsLogin,setIsshow}:LoginProps) => {
+  
     const {setToken,setId} = useUserStore()
     const [value,setValue] = useState<LoginInfo>({
         username:'',
@@ -26,7 +26,7 @@ const Login = ({setIsLogin}:LoginProps) => {
             })
             setToken(res.data.token)
             setId(res.data.data.id)
-             setIsshow(false)
+            setIsshow(false)
         }
     }
   return (
