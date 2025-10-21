@@ -134,8 +134,8 @@ const Agent = () => {
       {/* ✅ 输入框固定底部 */}
       <div
         style={{
-          position: 'fixed',
-          bottom: 20,
+          position: 'absolute',
+          bottom: -15,
           left: '50%',
           transform: 'translateX(-50%)',
           width: 580,
