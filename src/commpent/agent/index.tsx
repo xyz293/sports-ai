@@ -17,8 +17,7 @@ const Agent = () => {
     })
     
     const getAi = async () => {
-        const res = await Aichat(user)
-       console.log(res)
+         await Aichat(user)
        setUser({...user,content:''})
     }
    return (

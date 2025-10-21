@@ -1,4 +1,4 @@
-import { SparkMD5 } from 'spark-md5'
+import  SparkMD5  from 'spark-md5'
 self.onmessage = async (e) => {
   const { chunks } = e.data;
    const list =[] 

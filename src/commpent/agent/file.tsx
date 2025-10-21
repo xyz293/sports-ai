@@ -11,12 +11,14 @@ const AgentFile = () => {
     }
 const getHashByWorker = (chunks: Blob[]): Promise<string> => {
   return new Promise((resolve) => {
-    const worker = new Worker(new URL('./hashWorker.ts', import.meta.url));
+    const worker = new Worker(new URL('../../../public/hashWorker', import.meta.url),{
+      type:'module'
+    });
     worker.postMessage({ chunks }); // 把分片发送给 worker
 
     worker.onmessage = (e) => {
       const { hash, progress } = e.data;
-      if (progress) console.log('hash进度', progress); // 可以更新进度条
+      if (progress) console.log('hash进度', progress); 
       if (hash) {
         worker.terminate(); // 计算完成，关闭 worker
         resolve(hash);      // 返回最终 hash
@@ -45,7 +47,7 @@ const getHashByWorker = (chunks: Blob[]): Promise<string> => {
             const file = e.target.files?.[0]
             if(file){
                 const chunks = getChunk(file)
-                 const hash = await getHashByWorker(chunks)
+                const hash = await getHashByWorker(chunks)
                 await uploadChunk(chunks,hash)
                 await merge(hash,file.name)
             }
