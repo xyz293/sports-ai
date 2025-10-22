@@ -3,12 +3,16 @@ import type {LoginInfo } from '../../type/user'
 import {useState} from 'react'
 import {login} from '../../api/user'
 import useUserStore from '../../store/index'
+import {CreateIntergal} from '../../api/intergal'
 interface LoginProps{
     setIsLogin:(isLogin:boolean)=>void
     setIsshow:(isshow:boolean)=>void
+    setIsModalShow:(isModalShow:boolean)=>void
 }
-const Login = ({setIsLogin,setIsshow}:LoginProps) => {
-  
+const Login = ({setIsLogin,setIsshow,setIsModalShow}:LoginProps) => {
+     const initIntergal = async (user_id: number) => {
+        await CreateIntergal(user_id, 0)
+     }
     const {setToken,setId} = useUserStore()
     const [value,setValue] = useState<LoginInfo>({
         username:'',
@@ -24,9 +28,11 @@ const Login = ({setIsLogin,setIsshow}:LoginProps) => {
                 password:'',
                 nickname:'',
             })
+            await initIntergal(res.data.data.id)
             setToken(res.data.token)
             setId(res.data.data.id)
             setIsshow(false)
+            setIsModalShow(false)
         }
     }
   return (

@@ -11,3 +11,11 @@ export interface LoginInfo {
   password: string;
   nickname: string;
 }
+
+export interface UserInfo {
+    id: number
+    username: string
+    nickname: string
+    avatar?: string
+    create_time: string
+}

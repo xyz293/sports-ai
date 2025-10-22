@@ -44,3 +44,23 @@ export const Verify = () => {
         }
     })
 }
+
+export const GetUserInfo = (id:number) => {
+    return request({
+        url:'/user/userinfo',
+        method:'get',
+        params:{
+            id:id
+        }
+    })
+}
+
+export const SignIn = (id:number) => {
+    return request({
+        url:'/user/sign',
+        method:'post',
+        data:{
+             user_id:id
+        }
+    })
+}
