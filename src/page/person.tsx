@@ -7,8 +7,12 @@ import type { Intergal } from '../type/intergal/index';
 import type { UserInfo } from '../type/user/index';
 import { Avatar ,Button} from 'antd';
 import {SignIn} from '../api/user'
+import {useNavigate} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 const Base = () => {
   const id = getId();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState<UserInfo>();
   const [intergal, setIntergal] = useState<Intergal>();
   const signIn = async () => {
@@ -35,6 +39,7 @@ const Base = () => {
   }
   const showUserInfo = async () => {
     const res = await GetUserInfo(id);
+    console.log(1);
     const res1 = await GetIntergal(id);
     console.log(res1);
     console.log(res);
@@ -43,8 +48,11 @@ const Base = () => {
   };
 
   useEffect(() => {
-    showUserInfo();
-  }, [id]);
+    if(location.pathname==='/person'){
+        navigate('/person/message');
+          showUserInfo();
+    }
+  }, []);
 
   return (
     <div
@@ -125,13 +133,13 @@ const Base = () => {
             fontWeight: 'bold',
           }}
         >
-            <Button>消息中心</Button>
+            <Button onClick={() => navigate('/person/message')}>消息中心</Button>
             <Button>我的订单</Button>
             <Button>我的比赛</Button>
-            <Button>我的积分</Button>
+            <Button onClick={() => navigate('/person/integral/log')}>我的积分</Button>
         </div>
       </div>
-      <Outlet />
+      <Outlet integral={intergal?.total_integral} />
     </div>
   );
 };

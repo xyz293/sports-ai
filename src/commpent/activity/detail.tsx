@@ -3,12 +3,14 @@ import { Button } from 'antd'
 import { useState, useEffect } from 'react'
 import type { ActivityInfo } from '../../type/activity/index'
 import {getId} from '../../uilts/tools'
+import {getIntergalRule } from '../../api/intergal'
 interface ActivityDetailProps {
   id: number
   setIsShow: (isShow: boolean) => void
 }
 
 const ActivityDetail = ({ id,setIsShow }: ActivityDetailProps) => {
+  const [rule, setRule] = useState<string>('')
   const [detail, setDetail] = useState<ActivityInfo>({
     id,
     title: '',
@@ -44,8 +46,19 @@ const ActivityDetail = ({ id,setIsShow }: ActivityDetailProps) => {
       console.error('获取活动详情失败', err)
     }
   }
+  const showRule = async () => {
+    try {
+      const res = await getIntergalRule(1,detail.id)
+      console.log(res)
+      console.log(res.data.data.rule)
+      setRule(res.data.data.rule)
+    } catch (err) {
+      console.error('获取积分规则失败', err)
+    }
+  }
   useEffect(() => {
     showDetail()
+    showRule()
   }, [id])
 
   return (
@@ -72,6 +85,7 @@ const ActivityDetail = ({ id,setIsShow }: ActivityDetailProps) => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <div>活动时间：{new Date(detail.start_time).toLocaleString()} - {new Date(detail.end_time).toLocaleString()}</div>
           <div>活动地点：{detail.location}</div>
+          <div>积分规则：{rule}</div>
         </div>
 
         {/* 右侧信息 */}
