@@ -28,3 +28,24 @@ export const UpdateIntergal = async (user_id: number, intergal: number) => {
     }
   })
 }
+
+export const getIntergalRule = async (type: number, integral_id: number) => {
+  return request({
+    url: '/intergal/rule',
+    method: 'GET',
+    params: {
+      type: type,
+      integral_id: integral_id
+    }
+  })
+}
+
+export const getLog = async (id: number) => {
+  return request({
+    url: '/intergal/log',
+    method: 'GET',
+    params: {
+     user_id: id
+    }
+  })
+}
