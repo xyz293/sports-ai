@@ -23,3 +23,13 @@ export const getAiMessage = (id: number) => {
     }
   })
 }
+
+export const ClientMessage = (id: number) => {
+  return request({
+    url:'/message/clientMessage',
+    method:'post',
+    data:{
+      id:id
+    }
+  })
+}

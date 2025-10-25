@@ -8,3 +8,10 @@ export interface ActivityInfo {
     number_limit:number
     status:number
 }
+
+export interface Honor{
+    id:number
+    name:string
+    description:string
+    award_date:string
+}

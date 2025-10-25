@@ -26,3 +26,14 @@ export const join = (activity_id:number,user_id:number)=>{
         }
     })
 }
+
+export const getmyHonor = (id:number,type:number)=>{
+    return request({
+        url:'/activity/honor',
+        method:'get',
+        params:{
+            user_id:id,
+            type:type
+        }
+    })
+}
