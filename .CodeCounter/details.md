@@ -1,10 +1,10 @@
 # Details
 
-Date : 2025-10-22 22:31:09
+Date : 2025-10-23 14:31:31
 
 Directory : ./src
 
-Total : 37 files,  1422 codes, 15 comments, 93 blanks, all 1530 lines, 1.04% comment rate
+Total : 42 files,  1671 codes, 15 comments, 104 blanks, all 1790 lines, 0.89% comment rate
 
 [summary](results.md)
 
@@ -13,6 +13,7 @@ Total : 37 files,  1422 codes, 15 comments, 93 blanks, all 1530 lines, 1.04% com
 | :--- | :--- | ---: | ---: | ---: | ---: | ---: |
 | [App.tsx](../src\App.tsx) | TypeScript JSX | 11 | 0 | 2 | 13 | 0.00% |
 | [api\activity.ts](../src\api\activity.ts) | TypeScript | 26 | 0 | 2 | 28 | 0.00% |
+| [api\discussion.ts](../src\api\discussion.ts) | TypeScript | 38 | 0 | 4 | 42 | 0.00% |
 | [api\file.ts](../src\api\file.ts) | TypeScript | 18 | 0 | 1 | 19 | 0.00% |
 | [api\intergal.ts](../src\api\intergal.ts) | TypeScript | 49 | 0 | 3 | 52 | 0.00% |
 | [api\message.ts](../src\api\message.ts) | TypeScript | 24 | 0 | 1 | 25 | 0.00% |
@@ -22,6 +23,8 @@ Total : 37 files,  1422 codes, 15 comments, 93 blanks, all 1530 lines, 1.04% com
 | [commpent\activity\list.tsx](../src\commpent\activity\list.tsx) | TypeScript JSX | 119 | 3 | 10 | 132 | 2.46% |
 | [commpent\agent\file.tsx](../src\commpent\agent\file.tsx) | TypeScript JSX | 57 | 0 | 2 | 59 | 0.00% |
 | [commpent\agent\index.tsx](../src\commpent\agent\index.tsx) | TypeScript JSX | 157 | 1 | 14 | 172 | 0.63% |
+| [commpent\discussion\base.tsx](../src\commpent\discussion\base.tsx) | TypeScript JSX | 84 | 0 | 5 | 89 | 0.00% |
+| [commpent\discussion\detail.tsx](../src\commpent\discussion\detail.tsx) | TypeScript JSX | 4 | 0 | 1 | 5 | 0.00% |
 | [commpent\integral\log.tsx](../src\commpent\integral\log.tsx) | TypeScript JSX | 100 | 0 | 9 | 109 | 0.00% |
 | [commpent\login\index.tsx](../src\commpent\login\index.tsx) | TypeScript JSX | 20 | 0 | 0 | 20 | 0.00% |
 | [commpent\login\login.tsx](../src\commpent\login\login.tsx) | TypeScript JSX | 66 | 0 | 1 | 67 | 0.00% |
@@ -34,12 +37,14 @@ Total : 37 files,  1422 codes, 15 comments, 93 blanks, all 1530 lines, 1.04% com
 | [main.tsx](../src\main.tsx) | TypeScript JSX | 11 | 0 | 2 | 13 | 0.00% |
 | [page\activity.tsx](../src\page\activity.tsx) | TypeScript JSX | 21 | 0 | 1 | 22 | 0.00% |
 | [page\agent.tsx](../src\page\agent.tsx) | TypeScript JSX | 9 | 0 | 0 | 9 | 0.00% |
+| [page\discussion.tsx](../src\page\discussion.tsx) | TypeScript JSX | 72 | 0 | 0 | 72 | 0.00% |
 | [page\index.tsx](../src\page\index.tsx) | TypeScript JSX | 97 | 0 | 3 | 100 | 0.00% |
-| [page\person.tsx](../src\page\person.tsx) | TypeScript JSX | 141 | 1 | 5 | 147 | 0.70% |
+| [page\person.tsx](../src\page\person.tsx) | TypeScript JSX | 142 | 1 | 5 | 148 | 0.70% |
 | [router\gurda\index.tsx](../src\router\gurda\index.tsx) | TypeScript JSX | 11 | 0 | 2 | 13 | 0.00% |
-| [router\index.tsx](../src\router\index.tsx) | TypeScript JSX | 64 | 0 | 6 | 70 | 0.00% |
+| [router\index.tsx](../src\router\index.tsx) | TypeScript JSX | 97 | 0 | 6 | 103 | 0.00% |
 | [store\index.ts](../src\store\index.ts) | TypeScript | 22 | 0 | 2 | 24 | 0.00% |
 | [type\activity\index.ts](../src\type\activity\index.ts) | TypeScript | 10 | 0 | 0 | 10 | 0.00% |
+| [type\discussion\index.ts](../src\type\discussion\index.ts) | TypeScript | 17 | 0 | 1 | 18 | 0.00% |
 | [type\intergal\index.ts](../src\type\intergal\index.ts) | TypeScript | 12 | 0 | 1 | 13 | 0.00% |
 | [type\message\index.ts](../src\type\message\index.ts) | TypeScript | 11 | 0 | 2 | 13 | 0.00% |
 | [type\user\index.ts](../src\type\user\index.ts) | TypeScript | 20 | 0 | 1 | 21 | 0.00% |
