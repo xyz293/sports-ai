@@ -13,7 +13,7 @@ const Login = ({setIsLogin,setIsshow,setIsModalShow}:LoginProps) => {
      const initIntergal = async (user_id: number) => {
         await CreateIntergal(user_id, 0)
      }
-    const {setToken,setId} = useUserStore()
+    const {setToken,setId,setNickname,setPhone} = useUserStore()
     const [value,setValue] = useState<LoginInfo>({
         username:'',
         password:'',
@@ -31,6 +31,8 @@ const Login = ({setIsLogin,setIsshow,setIsModalShow}:LoginProps) => {
             await initIntergal(res.data.data.id)
             setToken(res.data.token)
             setId(res.data.data.id)
+            setPhone(res.data.data.username)
+            setNickname(res.data.data.nickname)
             setIsshow(false)
             setIsModalShow(false)
         }

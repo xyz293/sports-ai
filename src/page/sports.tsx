@@ -7,7 +7,7 @@ const SportsPage = () => {
     const navigate = useNavigate()
     const location = useLocation()
     useEffect(()=>{
-        if(location.pathname==='/person/sports/honor'){
+        if(location.pathname==='/person/sports'){
             navigate('/person/sports/honor')
         }
     },[])

@@ -1,10 +1,10 @@
 # Details
 
-Date : 2025-10-23 14:31:31
+Date : 2025-10-26 14:17:39
 
 Directory : ./src
 
-Total : 42 files,  1671 codes, 15 comments, 104 blanks, all 1790 lines, 0.89% comment rate
+Total : 49 files,  2169 codes, 16 comments, 131 blanks, all 2316 lines, 0.73% comment rate
 
 [summary](results.md)
 
@@ -12,11 +12,12 @@ Total : 42 files,  1671 codes, 15 comments, 104 blanks, all 1790 lines, 0.89% co
 | filename | language | code | comment | blank | total | comment rate |
 | :--- | :--- | ---: | ---: | ---: | ---: | ---: |
 | [App.tsx](../src\App.tsx) | TypeScript JSX | 11 | 0 | 2 | 13 | 0.00% |
-| [api\activity.ts](../src\api\activity.ts) | TypeScript | 26 | 0 | 2 | 28 | 0.00% |
+| [api\activity.ts](../src\api\activity.ts) | TypeScript | 36 | 0 | 3 | 39 | 0.00% |
 | [api\discussion.ts](../src\api\discussion.ts) | TypeScript | 38 | 0 | 4 | 42 | 0.00% |
 | [api\file.ts](../src\api\file.ts) | TypeScript | 18 | 0 | 1 | 19 | 0.00% |
 | [api\intergal.ts](../src\api\intergal.ts) | TypeScript | 49 | 0 | 3 | 52 | 0.00% |
-| [api\message.ts](../src\api\message.ts) | TypeScript | 24 | 0 | 1 | 25 | 0.00% |
+| [api\message.ts](../src\api\message.ts) | TypeScript | 33 | 0 | 2 | 35 | 0.00% |
+| [api\product.ts](../src\api\product.ts) | TypeScript | 25 | 0 | 3 | 28 | 0.00% |
 | [api\user.ts](../src\api\user.ts) | TypeScript | 61 | 0 | 5 | 66 | 0.00% |
 | [assets\react.svg](../src\assets\react.svg) | XML | 1 | 0 | 0 | 1 | 0.00% |
 | [commpent\activity\detail.tsx](../src\commpent\activity\detail.tsx) | TypeScript JSX | 94 | 1 | 8 | 103 | 1.05% |
@@ -33,20 +34,26 @@ Total : 42 files,  1671 codes, 15 comments, 104 blanks, all 1790 lines, 0.89% co
 | [commpent\message\index.tsx](../src\commpent\message\index.tsx) | TypeScript JSX | 27 | 0 | 0 | 27 | 0.00% |
 | [commpent\message\unmessage.tsx](../src\commpent\message\unmessage.tsx) | TypeScript JSX | 8 | 0 | 0 | 8 | 0.00% |
 | [commpent\modal\index.tsx](../src\commpent\modal\index.tsx) | TypeScript JSX | 20 | 0 | 0 | 20 | 0.00% |
-| [commpent\personCenter\base.tsx](../src\commpent\personCenter\base.tsx) | TypeScript JSX | 0 | 0 | 1 | 1 | 0.00% |
+| [commpent\product\detail.tsx](../src\commpent\product\detail.tsx) | TypeScript JSX | 64 | 0 | 8 | 72 | 0.00% |
+| [commpent\product\list.tsx](../src\commpent\product\list.tsx) | TypeScript JSX | 176 | 1 | 14 | 191 | 0.56% |
+| [commpent\sports\horon.tsx](../src\commpent\sports\horon.tsx) | TypeScript JSX | 55 | 0 | 0 | 55 | 0.00% |
+| [commpent\sports\mysports.tsx](../src\commpent\sports\mysports.tsx) | TypeScript JSX | 8 | 0 | 0 | 8 | 0.00% |
 | [main.tsx](../src\main.tsx) | TypeScript JSX | 11 | 0 | 2 | 13 | 0.00% |
 | [page\activity.tsx](../src\page\activity.tsx) | TypeScript JSX | 21 | 0 | 1 | 22 | 0.00% |
 | [page\agent.tsx](../src\page\agent.tsx) | TypeScript JSX | 9 | 0 | 0 | 9 | 0.00% |
 | [page\discussion.tsx](../src\page\discussion.tsx) | TypeScript JSX | 72 | 0 | 0 | 72 | 0.00% |
-| [page\index.tsx](../src\page\index.tsx) | TypeScript JSX | 97 | 0 | 3 | 100 | 0.00% |
+| [page\index.tsx](../src\page\index.tsx) | TypeScript JSX | 116 | 0 | 3 | 119 | 0.00% |
 | [page\person.tsx](../src\page\person.tsx) | TypeScript JSX | 142 | 1 | 5 | 148 | 0.70% |
+| [page\product.tsx](../src\page\product.tsx) | TypeScript JSX | 19 | 0 | 0 | 19 | 0.00% |
+| [page\sports.tsx](../src\page\sports.tsx) | TypeScript JSX | 28 | 0 | 0 | 28 | 0.00% |
 | [router\gurda\index.tsx](../src\router\gurda\index.tsx) | TypeScript JSX | 11 | 0 | 2 | 13 | 0.00% |
-| [router\index.tsx](../src\router\index.tsx) | TypeScript JSX | 97 | 0 | 6 | 103 | 0.00% |
+| [router\index.tsx](../src\router\index.tsx) | TypeScript JSX | 166 | 0 | 6 | 172 | 0.00% |
 | [store\index.ts](../src\store\index.ts) | TypeScript | 22 | 0 | 2 | 24 | 0.00% |
-| [type\activity\index.ts](../src\type\activity\index.ts) | TypeScript | 10 | 0 | 0 | 10 | 0.00% |
+| [type\activity\index.ts](../src\type\activity\index.ts) | TypeScript | 16 | 0 | 1 | 17 | 0.00% |
 | [type\discussion\index.ts](../src\type\discussion\index.ts) | TypeScript | 17 | 0 | 1 | 18 | 0.00% |
 | [type\intergal\index.ts](../src\type\intergal\index.ts) | TypeScript | 12 | 0 | 1 | 13 | 0.00% |
 | [type\message\index.ts](../src\type\message\index.ts) | TypeScript | 11 | 0 | 2 | 13 | 0.00% |
+| [type\product\index.ts](../src\type\product\index.ts) | TypeScript | 10 | 0 | 0 | 10 | 0.00% |
 | [type\user\index.ts](../src\type\user\index.ts) | TypeScript | 20 | 0 | 1 | 21 | 0.00% |
 | [uilts\config.ts](../src\uilts\config.ts) | TypeScript | 4 | 0 | 1 | 5 | 0.00% |
 | [uilts\content.tsx](../src\uilts\content.tsx) | TypeScript JSX | 4 | 0 | 0 | 4 | 0.00% |

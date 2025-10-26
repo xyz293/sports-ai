@@ -1,13 +1,14 @@
 import {Button} from 'antd'
 import Login from '../commpent/login/index'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Activity from './activity'
 import Modals from '../commpent/modal/index'
 import {useNavigate} from 'react-router-dom'
 import {Outlet} from 'react-router-dom'
-import {getId} from '../uilts/tools'
+import {useLocation} from 'react-router-dom'
 const AgentPage = () => {
       const [isshow,setIsshow] = useState(1)
+      const location = useLocation()
       const navigate = useNavigate()
       const [isModalShow,setIsModalShow] = useState(false)
     const show = () => {
@@ -18,7 +19,11 @@ const AgentPage = () => {
                 return <Login setIsshow={setIsshow} setIsModalShow={setIsModalShow} />
         }
     }
-
+      useEffect(()=>{
+        if(location.pathname === '/'){
+          navigate('/product')
+        }
+      },[])
   return (
     <>
      <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',gap:30}}>
