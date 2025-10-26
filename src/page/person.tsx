@@ -134,7 +134,7 @@ const Base = () => {
           }}
         >
             <Button onClick={() => navigate('/person/message')}>消息中心</Button>
-            <Button>我的订单</Button>
+            <Button onClick={() => navigate('/person/order')}>我的订单</Button>
             <Button onClick={() => navigate('/person/sports')}>我的比赛</Button>
             <Button onClick={() => navigate('/person/integral/log')}>我的积分</Button>
         </div>

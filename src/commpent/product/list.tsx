@@ -3,11 +3,28 @@ import { Button, Input, Select } from 'antd'
 import { getProductList } from '../../api/product'
 import type { ProductList } from '../../type/product/index'
 import { useNavigate } from 'react-router-dom'
+import { SearchProduct } from '../../api/product'
+
 const ProductListPage = () => {
   const [index, setIndex] = useState<number>(0) 
   const [productList, setProductList] = useState<ProductList[]>([]) // 商品列表
   const divRef = useRef<HTMLDivElement>(null) // 用于获取滚动区域的引用
+  const [searchKey, setSearchKey] = useState<string>('')
+
+  const Search = async () => {
+    if (searchKey) {
+      const res = await SearchProduct(searchKey)
+      if (res.data.code === 200) {
+        setProductList(res.data.data)
+        setSearchKey('')
+      }
+    } else {
+      alert('请输入搜索关键词')
+    }
+  }
+
   const navigate = useNavigate()
+
   const getProductListData = async () => {
     const res = await getProductList()
     if (res.data.code === 200) {
@@ -31,9 +48,11 @@ const ProductListPage = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', backgroundColor: '#f8f8f8', padding: '20px' }}>
       {/* 商品筛选区域 */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', backgroundColor: '#fff', padding: '10px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', backgroundColor: '#fff', padding: '10px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', marginBottom: '20px' }}>
         <Input
           placeholder="请输入商品名称"
+          value={searchKey}
+          onChange={(e) => setSearchKey(e.target.value)}
           style={{
             width: '330px',
             borderRadius: '4px',
@@ -43,22 +62,24 @@ const ProductListPage = () => {
             fontSize: '14px',
           }}
         />
-        <Button 
-          type="primary" 
-          size="large" 
+        <Button
+          type="primary"
+          size="large"
+          onClick={Search}
           style={{
             height: '40px',
             fontSize: '14px',
             borderRadius: '4px',
             backgroundColor: '#1890ff',
-            borderColor: '#1890ff'
+            borderColor: '#1890ff',
+            padding: '0 20px',
           }}
         >
           查询
         </Button>
         <Select
           placeholder="请选择商品类型"
-          style={{ width: '30%' }}
+          style={{ width: '200px' }}
           dropdownStyle={{ borderRadius: '4px' }}
         >
           <Select.Option value={1}>运动器材</Select.Option>
@@ -67,10 +88,12 @@ const ProductListPage = () => {
         </Select>
       </div>
 
+      {/* 商品列表区域 */}
       <div
         ref={divRef}
         style={{
-          height: '480px',
+          height: '510px',
+          width: '800px',
           overflowY: 'auto',
           position: 'relative',
           border: '1px solid #ddd',
@@ -79,7 +102,7 @@ const ProductListPage = () => {
           backgroundColor: '#fff',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
-        onScroll={scrollToIndex} // 监听滚动事件
+        onScroll={scrollToIndex}
       >
         <div style={{ height: productList.length * 100 + 'px' }}>
           <div
@@ -92,63 +115,69 @@ const ProductListPage = () => {
           >
             {listToShow.map((item) => (
               <div
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/product/detail/${item.id}`)
                 }}
                 key={item.id}
                 style={{
                   height: '100px',
                   display: 'flex',
-                  flexDirection: 'column',
-                  gap: '5px',
-                  borderBottom: '1px solid #f0f0f0', // 增加分隔线
+                  gap: '15px',
                   padding: '10px',
                   backgroundColor: '#fafafa',
                   borderRadius: '8px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+                  marginBottom: '10px',
+                  cursor: 'pointer',
                 }}
               >
-                <div>
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    style={{
-                      width: '80px',
-                      height: '80px',
-                      objectFit: 'cover',
-                      borderRadius: '8px',
-                    }}
-                  />
-                </div>
-
-                <div style={{ fontSize: '14px', color: '#555' }}>
-                  {item.description}
-                </div>
-
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div style={{ fontWeight: 'bold', fontSize: '16px', color: '#333' }}>
-                    ￥{item.price}
+                {/* 商品图片 */}
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  style={{
+                    width: '80px',
+                    height: '80px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                  }}
+                />
+                
+                {/* 商品信息部分 */}
+                <div style={{ flex: 1 }}>
+                  {/* 商品名称与描述 */}
+                  <div style={{ fontSize: '14px', fontWeight: 'bold', color: '#333' }}>
+                    {item.name}
                   </div>
-                  <Button
-                    type="primary"
-                    size="small"
-                    style={{
-                      backgroundColor: '#52c41a',
-                      borderColor: '#52c41a',
-                      fontSize: '12px',
-                      padding: '4px 10px',
-                    }}
-                  >
-                    加入购物车
-                  </Button>
-                  
+                  <div style={{ fontSize: '12px', color: '#555', marginTop: '5px' }}>
+                    {item.description}
+                  </div>
+
+                  {/* 商品底部信息（价格和销量） */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px' }}>
+                    <div style={{ fontWeight: 'bold', fontSize: '16px', color: '#333' }}>
+                      ￥{item.price}
+                    </div>
+                    <div style={{ fontSize: '12px', color: '#888' }}>
+                      销量: {item.sales_volume}
+                    </div>
+                  </div>
                 </div>
 
-
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#888' }}>
-                  <div>{item.sales_volume} 销量</div>
-                  <div>{new Date(item.created_at).toLocaleDateString()}</div>
-                </div>
+                {/* 加入购物车按钮 */}
+                <Button
+                  type="primary"
+                  size="small"
+                  style={{
+                    backgroundColor: '#52c41a',
+                    borderColor: '#52c41a',
+                    fontSize: '12px',
+                    padding: '4px 10px',
+                    alignSelf: 'flex-start', // 将按钮定位到右上角
+                  }}
+                >
+                  加入购物车
+                </Button>
               </div>
             ))}
           </div>
