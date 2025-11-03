@@ -17,3 +17,13 @@ export const mergeFile = (hash:string,fileName:string) => {
         }
     })
 }
+
+export const verifyFile = (fileName:string) => {
+    return request({
+        url: '/file/verify',
+        method: 'post',
+        data:{
+            fileName:fileName
+        }
+    })
+}
