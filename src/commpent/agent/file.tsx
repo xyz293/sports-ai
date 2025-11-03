@@ -1,5 +1,5 @@
 import {Input} from 'antd'
-import {uploadFile,mergeFile} from '../../api/file'
+import {uploadFile,mergeFile,verifyFile} from '../../api/file'
 const AgentFile = () => {
     const getChunk = (file:File) => {
         const chunkSize = 1024 * 1024
@@ -26,6 +26,16 @@ const getHashByWorker = (chunks: Blob[]): Promise<string> => {
     };
   });
 };
+   const verity=async (filename:string,hash:string,chunks:Blob[])=>{
+    const res = await verifyFile(filename)
+          if(res.data.code === 200){
+            await uploadChunk(chunks,hash)
+            await merge(hash,filename)
+          }
+          else {
+            alert('文件成功')
+          }
+   }
   
     const uploadChunk =async (chunk:Blob[],hash:string)=>{
         const data = new FormData()
@@ -48,8 +58,7 @@ const getHashByWorker = (chunks: Blob[]): Promise<string> => {
             if(file){
                 const chunks = getChunk(file)
                 const hash = await getHashByWorker(chunks)
-                await uploadChunk(chunks,hash)
-                await merge(hash,file.name)
+               await verity(file.name,hash,chunks)
             }
         }}
         />
