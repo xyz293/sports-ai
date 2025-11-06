@@ -16,7 +16,6 @@ export const SearchProduct = (key:string) => {
         }
     })
 }
-
 export const getProductDetail = (id:number) => {
     return request({
         url:'/product/detail',

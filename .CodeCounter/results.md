@@ -1,47 +1,47 @@
 # Summary
 
-Date : 2025-10-26 14:17:39
+Date : 2025-11-03 13:55:53
 
 Directory : ./src
 
-Total : 49 files,  2169 codes, 16 comments, 131 blanks, all 2316 lines, 0.73% comment rate
+Total : 53 files,  2508 codes, 16 comments, 148 blanks, all 2672 lines, 0.63% comment rate
 
 [details](details.md)
 
 ## Languages
 | language | files | code | comment | blank | total | comment rate |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
-| TypeScript JSX | 30 | 1,750 | 7 | 98 | 1,855 | 0.40% |
-| TypeScript | 18 | 418 | 9 | 33 | 460 | 2.11% |
+| TypeScript JSX | 34 | 2,009 | 7 | 107 | 2,123 | 0.35% |
+| TypeScript | 18 | 498 | 9 | 41 | 548 | 1.78% |
 | XML | 1 | 1 | 0 | 0 | 1 | 0.00% |
 
 ## Directories
 | path | files | code | comment | blank | total | comment rate |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
-| . | 49 | 2,169 | 16 | 131 | 2,316 | 0.73% |
-| api | 7 | 260 | 0 | 21 | 281 | 0.00% |
+| . | 53 | 2,508 | 16 | 148 | 2,672 | 0.63% |
+| api | 7 | 305 | 0 | 26 | 331 | 0.00% |
 | assets | 1 | 1 | 0 | 0 | 1 | 0.00% |
-| commpent | 18 | 1,140 | 6 | 77 | 1,223 | 0.52% |
+| commpent | 21 | 1,341 | 6 | 85 | 1,432 | 0.45% |
 | commpent\activity | 2 | 213 | 4 | 18 | 235 | 1.84% |
-| commpent\agent | 2 | 214 | 1 | 16 | 231 | 0.47% |
+| commpent\agent | 2 | 223 | 1 | 16 | 240 | 0.45% |
 | commpent\discussion | 2 | 88 | 0 | 6 | 94 | 0.00% |
 | commpent\integral | 1 | 100 | 0 | 9 | 109 | 0.00% |
-| commpent\login | 3 | 159 | 0 | 6 | 165 | 0.00% |
+| commpent\login | 3 | 161 | 0 | 6 | 167 | 0.00% |
 | commpent\message | 3 | 43 | 0 | 0 | 43 | 0.00% |
 | commpent\modal | 1 | 20 | 0 | 0 | 20 | 0.00% |
-| commpent\product | 2 | 240 | 1 | 22 | 263 | 0.41% |
+| commpent\product | 5 | 430 | 1 | 30 | 461 | 0.23% |
 | commpent\sports | 2 | 63 | 0 | 0 | 63 | 0.00% |
-| page | 7 | 407 | 1 | 9 | 417 | 0.25% |
-| router | 2 | 177 | 0 | 8 | 185 | 0.00% |
+| page | 8 | 431 | 1 | 10 | 442 | 0.23% |
+| router | 2 | 211 | 0 | 8 | 219 | 0.00% |
 | router\gurda | 1 | 11 | 0 | 2 | 13 | 0.00% |
-| store | 1 | 22 | 0 | 2 | 24 | 0.00% |
-| type | 6 | 86 | 0 | 6 | 92 | 0.00% |
+| store | 1 | 30 | 0 | 2 | 32 | 0.00% |
+| type | 6 | 101 | 0 | 7 | 108 | 0.00% |
 | type\activity | 1 | 16 | 0 | 1 | 17 | 0.00% |
 | type\discussion | 1 | 17 | 0 | 1 | 18 | 0.00% |
 | type\intergal | 1 | 12 | 0 | 1 | 13 | 0.00% |
 | type\message | 1 | 11 | 0 | 2 | 13 | 0.00% |
-| type\product | 1 | 10 | 0 | 0 | 10 | 0.00% |
+| type\product | 1 | 25 | 0 | 1 | 26 | 0.00% |
 | type\user | 1 | 20 | 0 | 1 | 21 | 0.00% |
-| uilts | 4 | 54 | 8 | 3 | 65 | 12.90% |
+| uilts | 4 | 66 | 8 | 5 | 79 | 10.81% |
 
 [details](details.md)

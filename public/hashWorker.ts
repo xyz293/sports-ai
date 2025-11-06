@@ -2,9 +2,9 @@ import  SparkMD5  from 'spark-md5'
 self.onmessage = async (e) => {
   const { chunks } = e.data;
    const list =[] 
-   chunks.forEach((item:Blob,index:number) => {
+   chunks.forEach((item:{chunk:Blob,index:number},index:number) => {
     if(index === 0||index === chunks.length-1){
-      list.push(item)
+      list.push(item.chunk)
     }
     else {
         list.push(chunks.slice(0,2))

@@ -159,7 +159,7 @@ const Agent = () => {
           onPressEnter={sendMessage}
           style={{ flex: 1 }}
         />
-        <AgentFile />
+        <AgentFile setMessages={setMessages}  messages={messages} />
         <Button type="primary" onClick={sendMessage}>
           发送
         </Button>

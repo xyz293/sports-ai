@@ -27,3 +27,14 @@ export const verifyFile = (fileName:string) => {
         }
     })
 }
+
+
+export const getFile = (hash:string) => {
+    return request({
+        url: '/file/get',
+        method: 'get',
+        params:{
+            hash:hash
+        }
+    })
+}
