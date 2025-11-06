@@ -1,13 +1,13 @@
-Date : 2025-10-26 14:17:39
+Date : 2025-11-03 13:55:53
 Directory : ./src
-Total : 49 files,  2169 codes, 16 comments, 131 blanks, all 2316 lines, 0.73% comment rate
+Total : 53 files,  2508 codes, 16 comments, 148 blanks, all 2672 lines, 0.63% comment rate
 
 Languages
 +----------------+------------+------------+------------+------------+------------+--------------+
 | language       | files      | code       | comment    | blank      | total      | comment rate |
 +----------------+------------+------------+------------+------------+------------+--------------+
-| TypeScript JSX |         30 |      1,750 |          7 |         98 |      1,855 |        0.40% |
-| TypeScript     |         18 |        418 |          9 |         33 |        460 |        2.11% |
+| TypeScript JSX |         34 |      2,009 |          7 |        107 |      2,123 |        0.35% |
+| TypeScript     |         18 |        498 |          9 |         41 |        548 |        1.78% |
 | XML            |          1 |          1 |          0 |          0 |          1 |        0.00% |
 +----------------+------------+------------+------------+------------+------------+--------------+
 
@@ -15,30 +15,30 @@ Directories
 +---------------------------------+------------+------------+------------+------------+------------+--------------+
 | path                            | files      | code       | comment    | blank      | total      | comment rate |
 +---------------------------------+------------+------------+------------+------------+------------+--------------+
-| .                               |         49 |      2,169 |         16 |        131 |      2,316 |        0.73% |
-| commpent                        |         18 |      1,140 |          6 |         77 |      1,223 |        0.52% |
-| page                            |          7 |        407 |          1 |          9 |        417 |        0.25% |
-| api                             |          7 |        260 |          0 |         21 |        281 |        0.00% |
-| commpent\product                |          2 |        240 |          1 |         22 |        263 |        0.41% |
-| commpent\agent                  |          2 |        214 |          1 |         16 |        231 |        0.47% |
+| .                               |         53 |      2,508 |         16 |        148 |      2,672 |        0.63% |
+| commpent                        |         21 |      1,341 |          6 |         85 |      1,432 |        0.45% |
+| page                            |          8 |        431 |          1 |         10 |        442 |        0.23% |
+| commpent\product                |          5 |        430 |          1 |         30 |        461 |        0.23% |
+| api                             |          7 |        305 |          0 |         26 |        331 |        0.00% |
+| commpent\agent                  |          2 |        223 |          1 |         16 |        240 |        0.45% |
 | commpent\activity               |          2 |        213 |          4 |         18 |        235 |        1.84% |
-| router                          |          2 |        177 |          0 |          8 |        185 |        0.00% |
-| commpent\login                  |          3 |        159 |          0 |          6 |        165 |        0.00% |
+| router                          |          2 |        211 |          0 |          8 |        219 |        0.00% |
+| commpent\login                  |          3 |        161 |          0 |          6 |        167 |        0.00% |
+| type                            |          6 |        101 |          0 |          7 |        108 |        0.00% |
 | commpent\integral               |          1 |        100 |          0 |          9 |        109 |        0.00% |
 | commpent\discussion             |          2 |         88 |          0 |          6 |         94 |        0.00% |
-| type                            |          6 |         86 |          0 |          6 |         92 |        0.00% |
+| uilts                           |          4 |         66 |          8 |          5 |         79 |       10.81% |
 | commpent\sports                 |          2 |         63 |          0 |          0 |         63 |        0.00% |
-| uilts                           |          4 |         54 |          8 |          3 |         65 |       12.90% |
 | commpent\message                |          3 |         43 |          0 |          0 |         43 |        0.00% |
-| store                           |          1 |         22 |          0 |          2 |         24 |        0.00% |
+| store                           |          1 |         30 |          0 |          2 |         32 |        0.00% |
+| type\product                    |          1 |         25 |          0 |          1 |         26 |        0.00% |
 | type\user                       |          1 |         20 |          0 |          1 |         21 |        0.00% |
 | commpent\modal                  |          1 |         20 |          0 |          0 |         20 |        0.00% |
 | type\discussion                 |          1 |         17 |          0 |          1 |         18 |        0.00% |
 | type\activity                   |          1 |         16 |          0 |          1 |         17 |        0.00% |
 | type\intergal                   |          1 |         12 |          0 |          1 |         13 |        0.00% |
-| type\message                    |          1 |         11 |          0 |          2 |         13 |        0.00% |
 | router\gurda                    |          1 |         11 |          0 |          2 |         13 |        0.00% |
-| type\product                    |          1 |         10 |          0 |          0 |         10 |        0.00% |
+| type\message                    |          1 |         11 |          0 |          2 |         13 |        0.00% |
 | assets                          |          1 |          1 |          0 |          0 |          1 |        0.00% |
 +---------------------------------+------------+------------+------------+------------+------------+--------------+
 
@@ -49,28 +49,31 @@ Files
 | App.tsx                         | TypeScript JSX |         11 |          0 |          2 |         13 |        0.00% |
 | api\activity.ts                 | TypeScript     |         36 |          0 |          3 |         39 |        0.00% |
 | api\discussion.ts               | TypeScript     |         38 |          0 |          4 |         42 |        0.00% |
-| api\file.ts                     | TypeScript     |         18 |          0 |          1 |         19 |        0.00% |
+| api\file.ts                     | TypeScript     |         27 |          0 |          2 |         29 |        0.00% |
 | api\intergal.ts                 | TypeScript     |         49 |          0 |          3 |         52 |        0.00% |
 | api\message.ts                  | TypeScript     |         33 |          0 |          2 |         35 |        0.00% |
-| api\product.ts                  | TypeScript     |         25 |          0 |          3 |         28 |        0.00% |
+| api\product.ts                  | TypeScript     |         61 |          0 |          7 |         68 |        0.00% |
 | api\user.ts                     | TypeScript     |         61 |          0 |          5 |         66 |        0.00% |
 | assets\react.svg                | XML            |          1 |          0 |          0 |          1 |        0.00% |
 | commpent\activity\detail.tsx    | TypeScript JSX |         94 |          1 |          8 |        103 |        1.05% |
 | commpent\activity\list.tsx      | TypeScript JSX |        119 |          3 |         10 |        132 |        2.46% |
-| commpent\agent\file.tsx         | TypeScript JSX |         57 |          0 |          2 |         59 |        0.00% |
+| commpent\agent\file.tsx         | TypeScript JSX |         66 |          0 |          2 |         68 |        0.00% |
 | commpent\agent\index.tsx        | TypeScript JSX |        157 |          1 |         14 |        172 |        0.63% |
 | commpent\discussion\base.tsx    | TypeScript JSX |         84 |          0 |          5 |         89 |        0.00% |
 | commpent\discussion\detail.tsx  | TypeScript JSX |          4 |          0 |          1 |          5 |        0.00% |
 | commpent\integral\log.tsx       | TypeScript JSX |        100 |          0 |          9 |        109 |        0.00% |
 | commpent\login\index.tsx        | TypeScript JSX |         20 |          0 |          0 |         20 |        0.00% |
-| commpent\login\login.tsx        | TypeScript JSX |         66 |          0 |          1 |         67 |        0.00% |
+| commpent\login\login.tsx        | TypeScript JSX |         68 |          0 |          1 |         69 |        0.00% |
 | commpent\login\regiser.tsx      | TypeScript JSX |         73 |          0 |          5 |         78 |        0.00% |
 | commpent\message\Ssemessage.tsx | TypeScript JSX |          8 |          0 |          0 |          8 |        0.00% |
 | commpent\message\index.tsx      | TypeScript JSX |         27 |          0 |          0 |         27 |        0.00% |
 | commpent\message\unmessage.tsx  | TypeScript JSX |          8 |          0 |          0 |          8 |        0.00% |
 | commpent\modal\index.tsx        | TypeScript JSX |         20 |          0 |          0 |         20 |        0.00% |
-| commpent\product\detail.tsx     | TypeScript JSX |         64 |          0 |          8 |         72 |        0.00% |
+| commpent\product\detail.tsx     | TypeScript JSX |         72 |          0 |          8 |         80 |        0.00% |
 | commpent\product\list.tsx       | TypeScript JSX |        176 |          1 |         14 |        191 |        0.56% |
+| commpent\product\order.tsx      | TypeScript JSX |          8 |          0 |          0 |          8 |        0.00% |
+| commpent\product\order_item.tsx | TypeScript JSX |         47 |          0 |          3 |         50 |        0.00% |
+| commpent\product\product.tsx    | TypeScript JSX |        127 |          0 |          5 |        132 |        0.00% |
 | commpent\sports\horon.tsx       | TypeScript JSX |         55 |          0 |          0 |         55 |        0.00% |
 | commpent\sports\mysports.tsx    | TypeScript JSX |          8 |          0 |          0 |          8 |        0.00% |
 | main.tsx                        | TypeScript JSX |         11 |          0 |          2 |         13 |        0.00% |
@@ -78,22 +81,23 @@ Files
 | page\agent.tsx                  | TypeScript JSX |          9 |          0 |          0 |          9 |        0.00% |
 | page\discussion.tsx             | TypeScript JSX |         72 |          0 |          0 |         72 |        0.00% |
 | page\index.tsx                  | TypeScript JSX |        116 |          0 |          3 |        119 |        0.00% |
+| page\order.tsx                  | TypeScript JSX |         24 |          0 |          1 |         25 |        0.00% |
 | page\person.tsx                 | TypeScript JSX |        142 |          1 |          5 |        148 |        0.70% |
 | page\product.tsx                | TypeScript JSX |         19 |          0 |          0 |         19 |        0.00% |
 | page\sports.tsx                 | TypeScript JSX |         28 |          0 |          0 |         28 |        0.00% |
 | router\gurda\index.tsx          | TypeScript JSX |         11 |          0 |          2 |         13 |        0.00% |
-| router\index.tsx                | TypeScript JSX |        166 |          0 |          6 |        172 |        0.00% |
-| store\index.ts                  | TypeScript     |         22 |          0 |          2 |         24 |        0.00% |
+| router\index.tsx                | TypeScript JSX |        200 |          0 |          6 |        206 |        0.00% |
+| store\index.ts                  | TypeScript     |         30 |          0 |          2 |         32 |        0.00% |
 | type\activity\index.ts          | TypeScript     |         16 |          0 |          1 |         17 |        0.00% |
 | type\discussion\index.ts        | TypeScript     |         17 |          0 |          1 |         18 |        0.00% |
 | type\intergal\index.ts          | TypeScript     |         12 |          0 |          1 |         13 |        0.00% |
 | type\message\index.ts           | TypeScript     |         11 |          0 |          2 |         13 |        0.00% |
-| type\product\index.ts           | TypeScript     |         10 |          0 |          0 |         10 |        0.00% |
+| type\product\index.ts           | TypeScript     |         25 |          0 |          1 |         26 |        0.00% |
 | type\user\index.ts              | TypeScript     |         20 |          0 |          1 |         21 |        0.00% |
 | uilts\config.ts                 | TypeScript     |          4 |          0 |          1 |          5 |        0.00% |
 | uilts\content.tsx               | TypeScript JSX |          4 |          0 |          0 |          4 |        0.00% |
 | uilts\request.ts                | TypeScript     |         34 |          8 |          2 |         44 |       19.05% |
-| uilts\tools.ts                  | TypeScript     |         12 |          0 |          0 |         12 |        0.00% |
+| uilts\tools.ts                  | TypeScript     |         24 |          0 |          2 |         26 |        0.00% |
 | vite-env.d.ts                   | TypeScript     |          0 |          1 |          1 |          2 |      100.00% |
-| Total                           |                |      2,169 |         16 |        131 |      2,316 |        0.73% |
+| Total                           |                |      2,508 |         16 |        148 |      2,672 |        0.63% |
 +---------------------------------+----------------+------------+------------+------------+------------+--------------+
