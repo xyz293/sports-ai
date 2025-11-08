@@ -10,7 +10,7 @@ interface Userstore {
   phone:string;
   setPhone:(phone:string) => void
 }
-const useUserStore = create<Userstore>(
+const useUserStore = create<Userstore>()(
   persist(
     (set) => ({
       token: '',

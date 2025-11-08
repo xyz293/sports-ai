@@ -6,9 +6,11 @@ import {getId} from '../../uilts/tools'
 import type { AImessageInfo } from '../../type/message/index'
 interface AgentFileProps {
   messages: AImessageInfo[];
+  setIsshow: (isshow: boolean) => void;
   setMessages: (messages: AImessageInfo[]) => void;
+  setProgress: (progress: number) => void;
 }
-const AgentFile = ({messages,setMessages}:AgentFileProps) => {
+const AgentFile = ({messages,setMessages,setProgress,setIsshow}:AgentFileProps) => {
     const getChunk = (file:File) => {
         const chunkSize = 1024 * 1024
         const chunks = []
@@ -57,12 +59,12 @@ const getHashByWorker = (chunks: {chunk:Blob,index:number}[]): Promise<string> =
    }
    const verity=async (filename:string,hash:string,chunks:{chunk:Blob,index:number}[])=>{
     const res = await verifyFile(filename)
-   
           if(res.data.code === 200){
             await uploadChunk(chunks,hash)
-             const context = await merge(hash,filename)
-              const res = await getcontext(context)
-              setMessages([...messages,{role:'assistant',content:res,id:Date.now(),user_id:getId(),create_time:new Date().toLocaleString()}])
+             const res1 = await merge(hash,filename)
+             setIsshow(false)
+            const res = await getcontext(res1)
+            setMessages([...messages,{role:'assistant',content:res.data.data,id:Date.now(),user_id:getId(),create_time:new Date().toLocaleString()}])
           }
           else {
             alert('文件成功')
@@ -89,14 +91,17 @@ const getHashByWorker = (chunks: {chunk:Blob,index:number}[]): Promise<string> =
             data.append('file',item.chunk)
             data.append('hash',hash)
             data.append('index',item.index.toString())
-          await  uploadFile(data)
+            const res =await  uploadFile(data)
+            if(res.data.code === 200){
+                setProgress(Math.round(item.index/chunk.length*100))
+            }
           })
     }
     const merge = async (hash:string,fileName:string) :Promise<string> => {
       return new Promise((resolve,reject)=>{
         mergeFile(hash,fileName).then((res)=>{
           try{
-            resolve(res.data.context)
+            resolve(res.data.data)
           }
           catch(err){
             reject(err)
@@ -110,6 +115,7 @@ const getHashByWorker = (chunks: {chunk:Blob,index:number}[]): Promise<string> =
     <div>
         <Input placeholder='请上传文件' type='file' style={{width:180}} 
          onChange={async (e)=>{
+          setIsshow(true)
             const file = e.target.files?.[0]
             if(file){
                 const chunks = getChunk(file)

@@ -1,10 +1,10 @@
 # Details
 
-Date : 2025-11-03 13:55:53
+Date : 2025-11-06 18:18:48
 
 Directory : ./src
 
-Total : 53 files,  2508 codes, 16 comments, 148 blanks, all 2672 lines, 0.63% comment rate
+Total : 53 files,  2574 codes, 16 comments, 150 blanks, all 2740 lines, 0.62% comment rate
 
 [summary](results.md)
 
@@ -14,15 +14,15 @@ Total : 53 files,  2508 codes, 16 comments, 148 blanks, all 2672 lines, 0.63% co
 | [App.tsx](../src\App.tsx) | TypeScript JSX | 11 | 0 | 2 | 13 | 0.00% |
 | [api\activity.ts](../src\api\activity.ts) | TypeScript | 36 | 0 | 3 | 39 | 0.00% |
 | [api\discussion.ts](../src\api\discussion.ts) | TypeScript | 38 | 0 | 4 | 42 | 0.00% |
-| [api\file.ts](../src\api\file.ts) | TypeScript | 27 | 0 | 2 | 29 | 0.00% |
+| [api\file.ts](../src\api\file.ts) | TypeScript | 36 | 0 | 4 | 40 | 0.00% |
 | [api\intergal.ts](../src\api\intergal.ts) | TypeScript | 49 | 0 | 3 | 52 | 0.00% |
 | [api\message.ts](../src\api\message.ts) | TypeScript | 33 | 0 | 2 | 35 | 0.00% |
-| [api\product.ts](../src\api\product.ts) | TypeScript | 61 | 0 | 7 | 68 | 0.00% |
+| [api\product.ts](../src\api\product.ts) | TypeScript | 61 | 0 | 6 | 67 | 0.00% |
 | [api\user.ts](../src\api\user.ts) | TypeScript | 61 | 0 | 5 | 66 | 0.00% |
 | [assets\react.svg](../src\assets\react.svg) | XML | 1 | 0 | 0 | 1 | 0.00% |
 | [commpent\activity\detail.tsx](../src\commpent\activity\detail.tsx) | TypeScript JSX | 94 | 1 | 8 | 103 | 1.05% |
 | [commpent\activity\list.tsx](../src\commpent\activity\list.tsx) | TypeScript JSX | 119 | 3 | 10 | 132 | 2.46% |
-| [commpent\agent\file.tsx](../src\commpent\agent\file.tsx) | TypeScript JSX | 66 | 0 | 2 | 68 | 0.00% |
+| [commpent\agent\file.tsx](../src\commpent\agent\file.tsx) | TypeScript JSX | 123 | 0 | 3 | 126 | 0.00% |
 | [commpent\agent\index.tsx](../src\commpent\agent\index.tsx) | TypeScript JSX | 157 | 1 | 14 | 172 | 0.63% |
 | [commpent\discussion\base.tsx](../src\commpent\discussion\base.tsx) | TypeScript JSX | 84 | 0 | 5 | 89 | 0.00% |
 | [commpent\discussion\detail.tsx](../src\commpent\discussion\detail.tsx) | TypeScript JSX | 4 | 0 | 1 | 5 | 0.00% |
