@@ -20,7 +20,7 @@ export const mergeFile = (hash:string,fileName:string) => {
 
 export const verifyFile = (fileName:string) => {
     return request({
-        url: '/file/verify',
+        url: '/file/verity',
         method: 'post',
         data:{
             fileName:fileName
@@ -31,7 +31,7 @@ export const verifyFile = (fileName:string) => {
 
 export const getFile = (hash:string) => {
     return request({
-        url: '/file/get',
+        url: '/file/checkchunk',
         method: 'get',
         params:{
             hash:hash

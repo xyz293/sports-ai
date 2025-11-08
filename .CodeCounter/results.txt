@@ -1,13 +1,13 @@
-Date : 2025-11-03 13:55:53
+Date : 2025-11-06 18:18:48
 Directory : ./src
-Total : 53 files,  2508 codes, 16 comments, 148 blanks, all 2672 lines, 0.63% comment rate
+Total : 53 files,  2574 codes, 16 comments, 150 blanks, all 2740 lines, 0.62% comment rate
 
 Languages
 +----------------+------------+------------+------------+------------+------------+--------------+
 | language       | files      | code       | comment    | blank      | total      | comment rate |
 +----------------+------------+------------+------------+------------+------------+--------------+
-| TypeScript JSX |         34 |      2,009 |          7 |        107 |      2,123 |        0.35% |
-| TypeScript     |         18 |        498 |          9 |         41 |        548 |        1.78% |
+| TypeScript JSX |         34 |      2,066 |          7 |        108 |      2,181 |        0.34% |
+| TypeScript     |         18 |        507 |          9 |         42 |        558 |        1.74% |
 | XML            |          1 |          1 |          0 |          0 |          1 |        0.00% |
 +----------------+------------+------------+------------+------------+------------+--------------+
 
@@ -15,12 +15,12 @@ Directories
 +---------------------------------+------------+------------+------------+------------+------------+--------------+
 | path                            | files      | code       | comment    | blank      | total      | comment rate |
 +---------------------------------+------------+------------+------------+------------+------------+--------------+
-| .                               |         53 |      2,508 |         16 |        148 |      2,672 |        0.63% |
-| commpent                        |         21 |      1,341 |          6 |         85 |      1,432 |        0.45% |
+| .                               |         53 |      2,574 |         16 |        150 |      2,740 |        0.62% |
+| commpent                        |         21 |      1,398 |          6 |         86 |      1,490 |        0.43% |
 | page                            |          8 |        431 |          1 |         10 |        442 |        0.23% |
 | commpent\product                |          5 |        430 |          1 |         30 |        461 |        0.23% |
-| api                             |          7 |        305 |          0 |         26 |        331 |        0.00% |
-| commpent\agent                  |          2 |        223 |          1 |         16 |        240 |        0.45% |
+| api                             |          7 |        314 |          0 |         27 |        341 |        0.00% |
+| commpent\agent                  |          2 |        280 |          1 |         17 |        298 |        0.36% |
 | commpent\activity               |          2 |        213 |          4 |         18 |        235 |        1.84% |
 | router                          |          2 |        211 |          0 |          8 |        219 |        0.00% |
 | commpent\login                  |          3 |        161 |          0 |          6 |        167 |        0.00% |
@@ -37,8 +37,8 @@ Directories
 | type\discussion                 |          1 |         17 |          0 |          1 |         18 |        0.00% |
 | type\activity                   |          1 |         16 |          0 |          1 |         17 |        0.00% |
 | type\intergal                   |          1 |         12 |          0 |          1 |         13 |        0.00% |
-| router\gurda                    |          1 |         11 |          0 |          2 |         13 |        0.00% |
 | type\message                    |          1 |         11 |          0 |          2 |         13 |        0.00% |
+| router\gurda                    |          1 |         11 |          0 |          2 |         13 |        0.00% |
 | assets                          |          1 |          1 |          0 |          0 |          1 |        0.00% |
 +---------------------------------+------------+------------+------------+------------+------------+--------------+
 
@@ -49,15 +49,15 @@ Files
 | App.tsx                         | TypeScript JSX |         11 |          0 |          2 |         13 |        0.00% |
 | api\activity.ts                 | TypeScript     |         36 |          0 |          3 |         39 |        0.00% |
 | api\discussion.ts               | TypeScript     |         38 |          0 |          4 |         42 |        0.00% |
-| api\file.ts                     | TypeScript     |         27 |          0 |          2 |         29 |        0.00% |
+| api\file.ts                     | TypeScript     |         36 |          0 |          4 |         40 |        0.00% |
 | api\intergal.ts                 | TypeScript     |         49 |          0 |          3 |         52 |        0.00% |
 | api\message.ts                  | TypeScript     |         33 |          0 |          2 |         35 |        0.00% |
-| api\product.ts                  | TypeScript     |         61 |          0 |          7 |         68 |        0.00% |
+| api\product.ts                  | TypeScript     |         61 |          0 |          6 |         67 |        0.00% |
 | api\user.ts                     | TypeScript     |         61 |          0 |          5 |         66 |        0.00% |
 | assets\react.svg                | XML            |          1 |          0 |          0 |          1 |        0.00% |
 | commpent\activity\detail.tsx    | TypeScript JSX |         94 |          1 |          8 |        103 |        1.05% |
 | commpent\activity\list.tsx      | TypeScript JSX |        119 |          3 |         10 |        132 |        2.46% |
-| commpent\agent\file.tsx         | TypeScript JSX |         66 |          0 |          2 |         68 |        0.00% |
+| commpent\agent\file.tsx         | TypeScript JSX |        123 |          0 |          3 |        126 |        0.00% |
 | commpent\agent\index.tsx        | TypeScript JSX |        157 |          1 |         14 |        172 |        0.63% |
 | commpent\discussion\base.tsx    | TypeScript JSX |         84 |          0 |          5 |         89 |        0.00% |
 | commpent\discussion\detail.tsx  | TypeScript JSX |          4 |          0 |          1 |          5 |        0.00% |
@@ -99,5 +99,5 @@ Files
 | uilts\request.ts                | TypeScript     |         34 |          8 |          2 |         44 |       19.05% |
 | uilts\tools.ts                  | TypeScript     |         24 |          0 |          2 |         26 |        0.00% |
 | vite-env.d.ts                   | TypeScript     |          0 |          1 |          1 |          2 |      100.00% |
-| Total                           |                |      2,508 |         16 |        148 |      2,672 |        0.63% |
+| Total                           |                |      2,574 |         16 |        150 |      2,740 |        0.62% |
 +---------------------------------+----------------+------------+------------+------------+------------+--------------+

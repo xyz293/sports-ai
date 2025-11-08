@@ -1,29 +1,29 @@
 # Summary
 
-Date : 2025-11-03 13:55:53
+Date : 2025-11-06 18:18:48
 
 Directory : ./src
 
-Total : 53 files,  2508 codes, 16 comments, 148 blanks, all 2672 lines, 0.63% comment rate
+Total : 53 files,  2574 codes, 16 comments, 150 blanks, all 2740 lines, 0.62% comment rate
 
 [details](details.md)
 
 ## Languages
 | language | files | code | comment | blank | total | comment rate |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
-| TypeScript JSX | 34 | 2,009 | 7 | 107 | 2,123 | 0.35% |
-| TypeScript | 18 | 498 | 9 | 41 | 548 | 1.78% |
+| TypeScript JSX | 34 | 2,066 | 7 | 108 | 2,181 | 0.34% |
+| TypeScript | 18 | 507 | 9 | 42 | 558 | 1.74% |
 | XML | 1 | 1 | 0 | 0 | 1 | 0.00% |
 
 ## Directories
 | path | files | code | comment | blank | total | comment rate |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
-| . | 53 | 2,508 | 16 | 148 | 2,672 | 0.63% |
-| api | 7 | 305 | 0 | 26 | 331 | 0.00% |
+| . | 53 | 2,574 | 16 | 150 | 2,740 | 0.62% |
+| api | 7 | 314 | 0 | 27 | 341 | 0.00% |
 | assets | 1 | 1 | 0 | 0 | 1 | 0.00% |
-| commpent | 21 | 1,341 | 6 | 85 | 1,432 | 0.45% |
+| commpent | 21 | 1,398 | 6 | 86 | 1,490 | 0.43% |
 | commpent\activity | 2 | 213 | 4 | 18 | 235 | 1.84% |
-| commpent\agent | 2 | 223 | 1 | 16 | 240 | 0.45% |
+| commpent\agent | 2 | 280 | 1 | 17 | 298 | 0.36% |
 | commpent\discussion | 2 | 88 | 0 | 6 | 94 | 0.00% |
 | commpent\integral | 1 | 100 | 0 | 9 | 109 | 0.00% |
 | commpent\login | 3 | 161 | 0 | 6 | 167 | 0.00% |

@@ -3,18 +3,19 @@ import { Button, Input } from 'antd'
 import { Aichat, getAiMessage } from '../../api/message'
 import { getId } from '../../uilts/tools'
 import AgentFile from './file'
+import Center from './centece'
 import type { AImessageInfo } from '../../type/message/index'
 import {Spin} from 'antd'
 const Agent = () => {
   const userId = getId()
   const [messages, setMessages] = useState<AImessageInfo[]>([])
   const [userInput, setUserInput] = useState<string>('')
-
+  const [isshow, setIsshow] = useState<boolean>(false)
   const messagesRef = useRef(messages)
   messagesRef.current = messages
+  const [progress, setProgress] = useState<number>(0)
   const [loading, setLoading] = useState<boolean>(false)
   const messagesContainerRef = useRef<HTMLDivElement>(null)
-
   const fetchHistory = async () => {
     try {
       const res = await getAiMessage(userId)
@@ -152,17 +153,24 @@ const Agent = () => {
           <Spin />
         </div>
       )}
-        <Input
+       <div style={{display:'flex',flexDirection:'column'}}>
+        <div>
+          {isshow && <Center progress={progress} />}
+        </div>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',gap:20}}>
+           <Input
           placeholder="请输入内容..."
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           onPressEnter={sendMessage}
-          style={{ flex: 1 }}
+          style={{ flex: 1 ,width:'300px'}}
         />
-        <AgentFile setMessages={setMessages}  messages={messages} />
+        <AgentFile setMessages={setMessages}  messages={messages} setIsshow={setIsshow}  setProgress={setProgress}/>
         <Button type="primary" onClick={sendMessage}>
           发送
         </Button>
+        </div>
+       </div>
       </div>
     </div>
   )

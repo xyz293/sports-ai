@@ -1,23 +1,33 @@
-import  SparkMD5  from 'spark-md5'
+import SparkMD5 from 'spark-md5';
+
 self.onmessage = async (e) => {
   const { chunks } = e.data;
-   const list =[] 
-   chunks.forEach((item:{chunk:Blob,index:number},index:number) => {
-    if(index === 0||index === chunks.length-1){
-      list.push(item.chunk)
-    }
-    else {
-        list.push(chunks.slice(0,2))
-        list.push(chunks.slice(chunks.length-2,chunks.length))
-        list.push(chunks.slice(chunks.length/2,chunks.length/2+2))
-    }
-   })
+  const spark = new SparkMD5.ArrayBuffer();
+  let completed = 0; // 计算进度
 
-   const spark = new SparkMD5.ArrayBuffer()
-    const reader = new FileReader()
-  reader.readAsArrayBuffer(new Blob(chunks))
-        reader.onload = (e) => {
-            spark.append(e.target?.result)
-        }
-  self.postMessage({ hash: spark.end() }); // 完成后返回 hash
+  // 逐片读取并计算 hash
+  const calculateHash = async () => {
+    for (const { chunk } of chunks) {
+      await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsArrayBuffer(chunk); // 读取当前分片
+        reader.onload = (event) => {
+          spark.append(event.target?.result); // 添加到 hash 计算
+          completed++;
+          // 发送进度（前端可展示）
+          self.postMessage({ progress: completed / chunks.length });
+          resolve();
+        };
+      });
+    }
+    // 所有分片计算完成，返回最终 hash
+    self.postMessage({ hash: spark.end(), progress: 1 });
+    self.close(); // 关闭 worker
+  };
+
+  calculateHash().catch((err) => {
+    console.error('hash 计算失败：', err);
+    self.postMessage({ error: err.message });
+    self.close();
+  });
 };
