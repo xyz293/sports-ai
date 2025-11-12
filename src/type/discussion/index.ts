@@ -9,6 +9,7 @@ export interface DiscussionList {
     status:number;
     gmt_create:string;
     gmt_modified:string;
+    type:'diss'
     description:string;
 }
 

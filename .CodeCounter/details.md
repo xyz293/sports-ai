@@ -1,10 +1,10 @@
 # Details
 
-Date : 2025-11-06 18:18:48
+Date : 2025-11-09 20:10:55
 
 Directory : ./src
 
-Total : 53 files,  2574 codes, 16 comments, 150 blanks, all 2740 lines, 0.62% comment rate
+Total : 54 files,  2600 codes, 16 comments, 147 blanks, all 2763 lines, 0.61% comment rate
 
 [summary](results.md)
 
@@ -22,8 +22,9 @@ Total : 53 files,  2574 codes, 16 comments, 150 blanks, all 2740 lines, 0.62% co
 | [assets\react.svg](../src\assets\react.svg) | XML | 1 | 0 | 0 | 1 | 0.00% |
 | [commpent\activity\detail.tsx](../src\commpent\activity\detail.tsx) | TypeScript JSX | 94 | 1 | 8 | 103 | 1.05% |
 | [commpent\activity\list.tsx](../src\commpent\activity\list.tsx) | TypeScript JSX | 119 | 3 | 10 | 132 | 2.46% |
-| [commpent\agent\file.tsx](../src\commpent\agent\file.tsx) | TypeScript JSX | 123 | 0 | 3 | 126 | 0.00% |
-| [commpent\agent\index.tsx](../src\commpent\agent\index.tsx) | TypeScript JSX | 157 | 1 | 14 | 172 | 0.63% |
+| [commpent\agent\centece.tsx](../src\commpent\agent\centece.tsx) | TypeScript JSX | 9 | 0 | 0 | 9 | 0.00% |
+| [commpent\agent\file.tsx](../src\commpent\agent\file.tsx) | TypeScript JSX | 130 | 0 | 2 | 132 | 0.00% |
+| [commpent\agent\index.tsx](../src\commpent\agent\index.tsx) | TypeScript JSX | 167 | 1 | 12 | 180 | 0.60% |
 | [commpent\discussion\base.tsx](../src\commpent\discussion\base.tsx) | TypeScript JSX | 84 | 0 | 5 | 89 | 0.00% |
 | [commpent\discussion\detail.tsx](../src\commpent\discussion\detail.tsx) | TypeScript JSX | 4 | 0 | 1 | 5 | 0.00% |
 | [commpent\integral\log.tsx](../src\commpent\integral\log.tsx) | TypeScript JSX | 100 | 0 | 9 | 109 | 0.00% |
