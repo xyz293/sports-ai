@@ -10,7 +10,7 @@ const IntegralLog = () => {
     const [index, setIndex] = useState<number>(0);
 
     const showLog = async () => {
-        const res = await getLog(id);
+        const res = await getLog(id); //1000w
         console.log(res);
         setLog(res.data.data);
     };
