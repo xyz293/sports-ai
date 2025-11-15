@@ -1,5 +1,5 @@
 import type {DiscussionList } from '../type/discussion/index'
-interface virual<T extends DiscussionList> {
+interface virual<T> {
     data:T[]
     setItem:(item:T[])=>void
     type:string
