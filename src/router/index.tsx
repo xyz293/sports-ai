@@ -1,11 +1,15 @@
 import {lazy,Suspense} from 'react'
 import {Spin} from 'antd'
-import{useEffect} from 'react'
 const Index = lazy(() => import('../page/index'))
 const Guard = lazy(() => import('../router/gurda/index'))
 const Agentpage = lazy(() => import('../page/agent'))
 const Person = lazy(() => import('../page/person'))
 const IntegralLog = lazy(() => import('../commpent/integral/log'))
+const PersonMessage = lazy(() => import('../page/order'))
+const Message = lazy(() => import('../commpent/message/index'))
+const Discussion = lazy(() => import('../page/discussion'))
+const DiscussionBase = lazy(() => import('../commpent/discussion/base'))
+const DisscussionDetail = lazy(() => import('../commpent/discussion/detail'))
 const Sports = lazy(() => import('../page/sports'))
 const Honor = lazy(() => import('../commpent/sports/horon'))
 const ProductDetail = lazy(() => import('../commpent/product/detail'))
@@ -13,29 +17,14 @@ const OrderItem = lazy(() => import('../commpent/product/order_item'))
 const Order = lazy(() => import('../commpent/product/order'))
 const MySports = lazy(() => import('../commpent/sports/mysports'))
 const ProductPage = lazy(() => import('../page/product'))
-const preloadRouteComponents =[
-() => import('../page/order'),
-() => import('../commpent/message/index'),
-() => import('../page/discussion'),
-() => import('../commpent/discussion/base'),
-() => import('../commpent/discussion/detail'),
-() => import('../commpent/product/list')
+const ProductList = lazy(() => import('../commpent/product/list'))
+const preloadRouteComponents = [
+  () => import('../commpent/product/detail'),
+  () => import('../commpent/product/list'),
+  () => import('../commpent/discussion/detail'),
+  () => import('../commpent/discussion/base'),
+  () => import('../commpent/sports/mysports')
 ]
-const ComponentPreloader = () => {
-  const load =(dealine:any)=>{
-    let index =0
-     while(index<preloadRouteComponents.length&&dealine.timeRemaining()>1){
-      preloadRouteComponents[index]()
-      index++
-     }
-     if(index<preloadRouteComponents.length&&!dealine.didTimeout){
-      requestIdleCallback(load)
-     }
-  }
-  useEffect(()=>{
-    requestIdleCallback(load)
-  },[])
-}
 const router = [{
   path:'/',
   element:(
@@ -221,4 +210,7 @@ const router = [{
 
 
 ]
-export default router
+export default {
+  preloadRouteComponents,
+  router,
+}
