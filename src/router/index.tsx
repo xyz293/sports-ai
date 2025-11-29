@@ -18,6 +18,13 @@ const Order = lazy(() => import('../commpent/product/order'))
 const MySports = lazy(() => import('../commpent/sports/mysports'))
 const ProductPage = lazy(() => import('../page/product'))
 const ProductList = lazy(() => import('../commpent/product/list'))
+const preloadRouteComponents = [
+  () => import('../commpent/product/detail'),
+  () => import('../commpent/product/list'),
+  () => import('../commpent/discussion/detail'),
+  () => import('../commpent/discussion/base'),
+  () => import('../commpent/sports/mysports')
+]
 const router = [{
   path:'/',
   element:(
@@ -203,4 +210,7 @@ const router = [{
 
 
 ]
-export default router
+export default {
+  preloadRouteComponents,
+  router,
+}
