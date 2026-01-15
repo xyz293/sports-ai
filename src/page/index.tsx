@@ -103,6 +103,18 @@ const AgentPage = () => {
                 e.currentTarget.style.boxShadow = '0 0 0 rgba(0,0,0,0)'
               }}
             >个人中心</Button>
+                <Button type='primary'  
+            size='small'
+              onClick={()=>{navigate('file')}}
+              onMouseEnter={(e)=>{
+               e.currentTarget.style.transform = 'scale(1.1) translateY(-5px)'
+               e.currentTarget.style.boxShadow = '0 5px 10px rgba(0,0,0,0.2)'
+              }}
+              onMouseLeave={(e)=>{
+                e.currentTarget.style.transform = 'scale(1) translateY(0)'
+                e.currentTarget.style.boxShadow = '0 0 0 rgba(0,0,0,0)'
+              }}
+            >文件解析</Button>
         </div>
        {isModalShow && (
         <Modals open={isModalShow} setIsModalShow={setIsModalShow}>

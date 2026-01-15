@@ -3,6 +3,7 @@ import { Button } from 'antd'
 import { useState, useEffect } from 'react'
 import type { ActivityInfo } from '../../type/activity/index'
 import {getId} from '../../uilts/tools'
+import {addRag} from '../../uilts/CheckRag'
 import {getIntergalRule } from '../../api/intergal'
 interface ActivityDetailProps {
   id: number
@@ -25,6 +26,7 @@ const ActivityDetail = ({ id,setIsShow }: ActivityDetailProps) => {
   const joinActivity = async () => {
     try {
       const res = await join(id,user_id)
+      await addRag(res.data.data.content,res.data.data.title)
       console.log(res)
       if(res.data.data.code === 200){
        alert(res.data.data.message)
@@ -41,6 +43,8 @@ const ActivityDetail = ({ id,setIsShow }: ActivityDetailProps) => {
   const showDetail = async () => {
     try {
       const res = await getdetail(id)
+      // 加入索引库
+      await addRag(res.data.data.content,res.data.data.title)
       setDetail(res.data.data)
     } catch (err) {
       console.error('获取活动详情失败', err)

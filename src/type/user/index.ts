@@ -19,3 +19,10 @@ export interface UserInfo {
     avatar?: string
     create_time: string
 }
+
+export interface RagInfo {
+
+    vector: number[]
+    text: string
+    time: string
+}

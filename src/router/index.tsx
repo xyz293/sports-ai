@@ -1,7 +1,7 @@
 import {lazy,Suspense} from 'react'
 import {Spin} from 'antd'
 const Index = lazy(() => import('../page/index'))
-const Guard = lazy(() => import('../router/gurda/index'))
+const File = lazy(() => import('../page/file'))
 const Agentpage = lazy(() => import('../page/agent'))
 const Person = lazy(() => import('../page/person'))
 const IntegralLog = lazy(() => import('../commpent/integral/log'))
@@ -37,6 +37,16 @@ const router = [{
     </Suspense>
   ),
   children:[
+        {
+          path:'/file',
+          element:(
+            <Suspense fallback={<div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <Spin />
+            </div>}>
+                <File />
+            </Suspense>
+          )
+        },
     {
       path:'/person',
       element:(

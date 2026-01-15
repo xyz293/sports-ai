@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件解析性能测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 3px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>文件解析性能测试</h1>
+    <div class="container">
+        <p>请上传Excel文件（.xlsx/.xls）进行性能测试</p>
+        <input type="file" id="fileInput" accept=".xlsx,.xls">
+        <button onclick="startTest()">开始测试</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script type="module">
+        // 导入解析函数
+        import { parallelfile } from './src/uilts/parallet.ts';
+        import { parallelSerial } from './src/uilts/serial.ts';
+
+        const fileInput = document.getElementById('fileInput');
+        const resultDiv = document.getElementById('result');
+
+        function log(message) {
+            resultDiv.innerHTML += message + '\n';
+        }
+
+        function clearLog() {
+            resultDiv.innerHTML = '';
+        }
+
+        async function startTest() {
+            const file = fileInput.files[0];
+            if (!file) {
+                log('请先选择一个Excel文件');
+                return;
+            }
+
+            clearLog();
+            log('开始性能测试...');
+            log(`文件名: ${file.name}`);
+            log(`文件大小: ${(file.size / 1024 / 1024).toFixed(2)} MB`);
+
+            try {
+                // 准备测试数据
+                const parseParams = { data: file, index: file.name };
+                const parallelParams = [parseParams];
+
+                // 并行解析测试
+                log('\n=== 并行解析测试 ===');
+                const parallelStart = performance.now();
+                const parallelResult = await parallelfile(parallelParams, 1024, 'excel', file.name);
+                const parallelTime = (performance.now() - parallelStart).toFixed(2);
+                log(`并行解析耗时: ${parallelTime} ms`);
+                log(`解析结果: ${parallelResult.success}个成功, ${parallelResult.failed}个失败`);
+
+                // 串行解析测试
+                log('\n=== 串行解析测试 ===');
+                const serialStart = performance.now();
+                const serialResult = await parallelSerial(file, 1024, 'excel', file.name);
+                const serialTime = (performance.now() - serialStart).toFixed(2);
+                log(`串行解析耗时: ${serialTime} ms`);
+                log(`解析结果: ${serialResult ? '成功' : '失败'}`);
+
+                // 性能对比
+                log('\n=== 性能对比 ===');
+                const speedUp = Number(parallelTime) > 0 ? (Number(serialTime) / Number(parallelTime)).toFixed(2) : '∞';
+                const timeSaved = (Number(serialTime) - Number(parallelTime)).toFixed(2);
+                log(`性能提升: ${speedUp} 倍`);
+                log(`节省时间: ${timeSaved} ms`);
+
+            } catch (error) {
+                log(`\n错误: ${error.message}`);
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>

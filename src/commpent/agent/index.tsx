@@ -4,6 +4,7 @@ import { Aichat, getAiMessage } from '../../api/message'
 import { getId } from '../../uilts/tools'
 import AgentFile from './file'
 import Center from './centece'
+import {checkRag} from '../../uilts/CheckRag'
 import type { AImessageInfo } from '../../type/message/index'
 import {Spin} from 'antd'
 const Agent = () => {
@@ -73,7 +74,7 @@ const Agent = () => {
     setUserInput('')
 
     try {
-      await Aichat({ content: userInput, id: userId })
+      await Aichat({ content: await checkRag('ai-rag',userInput), id: userId })
     } catch (err: any) {
       if (err?.response?.status === 401) {
         alert('请先登录')
@@ -161,7 +162,9 @@ const Agent = () => {
            <Input
           placeholder="请输入内容..."
           value={userInput}
-          onChange={(e) => setUserInput(e.target.value)}
+          onChange={(e) => {
+            setUserInput(e.target.value)
+          }}
           onPressEnter={sendMessage}
           style={{ flex: 1 ,width:'300px'}}
         />
