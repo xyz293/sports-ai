@@ -24,7 +24,7 @@ export interface RagInfo {
 
     vector: number[]
     text: string
-    time: string
+    time: number 
 }
 
 

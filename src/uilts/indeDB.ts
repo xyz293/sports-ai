@@ -33,7 +33,8 @@ class IndexDB {
     objectStore.add(data)
    }
    public async get(store:string):Promise<RagInfo[]>{
-    const DB = await this.DB
+        const DB = await this.DB
+        await this.delete(store)
          return new Promise((resolve, reject) => {
           const transaction = DB.transaction(store, 'readonly')
           const objectStore = transaction.objectStore(store)
@@ -49,6 +50,22 @@ class IndexDB {
             }
           };
         });
+   }
+   public async delete(store:string){
+    const DB = await this.DB
+    const transaction = DB.transaction(store, 'readwrite')
+    const objectStore = transaction.objectStore(store)
+    objectStore.openCursor().onsuccess = (event: Event) => {
+      if (event.target instanceof IDBRequest) {
+        const cursor = event.target.result
+        if (cursor) {
+          if (cursor.time<Date.now()) {
+            cursor.delete()
+          }
+          cursor.continue()
+        }
+      }
+    }
    }
 }
 
