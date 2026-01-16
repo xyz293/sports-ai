@@ -1,6 +1,7 @@
 export interface AichatInfo {
    content:string;
    id:number
+   text:string;
 }
 
 export interface AImessageInfo {

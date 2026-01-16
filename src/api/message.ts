@@ -7,6 +7,7 @@ export const Aichat =(data:AichatInfo)=>{
         data:{
             content:data.content,
             id:data.id
+            ,text:data.text
         }
     })
 }

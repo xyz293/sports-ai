@@ -25,7 +25,8 @@ const AgentFile = ({messages,setMessages,setProgress,setIsshow}:AgentFileProps) 
     const getcontext =async (key:string)=>{
         const res = await Aichat({
             id:getId(),
-            content:key
+            content:key,
+            text:messages.map(item=>item.content).join('\n')
         })
         return res.data.content
     }

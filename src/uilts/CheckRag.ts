@@ -1,6 +1,7 @@
 import { textToVector } from './textToVector '
 import IndexDB from './indeDB'
 import { similarity } from 'ml-distance';
+import CashText from './CashText'
 
 /**
  * 将每一次用户执行的事存入索引库
@@ -8,8 +9,8 @@ import { similarity } from 'ml-distance';
  * @returns {Array} 定长向量数组，值为 [-1 ~ 1] 区间的浮点数，语义相似文本向量越接近
  */
 export const addRag = async (text: string,type:string) => {
-    const time = new Date().toISOString()
-    const key = `${type}-${text}-${time}`
+    const key = `1${text}-${type}`
+    console.log(key)
     const vector = textToVector(key)
     await IndexDB.add('ai-rag',{
         vector,
@@ -32,5 +33,20 @@ export const checkRag = async (store:string,text:string) : Promise<string> => {
             wen = item.text
         }
     })
-    return wen
+    console.log(max)
+    console.log(wen)
+    const data =CashText.getText()
+  if(max>0.5){
+      data.forEach(item=>{
+
+          wen = wen+item.text
+      })
+     return wen+text
+  }
+  else {
+    data.forEach(item=>{
+    text = text+item.text
+  })
+    return text
+  }
 }

@@ -3,6 +3,7 @@ import { Button, Input } from 'antd'
 import { Aichat, getAiMessage } from '../../api/message'
 import { getId } from '../../uilts/tools'
 import AgentFile from './file'
+import CashText from '../../uilts/CashText'
 import Center from './centece'
 import {checkRag} from '../../uilts/CheckRag'
 import type { AImessageInfo } from '../../type/message/index'
@@ -19,7 +20,7 @@ const Agent = () => {
   const messagesContainerRef = useRef<HTMLDivElement>(null)
   const fetchHistory = async () => {
     try {
-      const res = await getAiMessage(userId)
+      const res = await getAiMessage(4)
       setMessages(res.data.data)
     } catch (err) {
       console.error('获取历史消息失败', err)
@@ -29,13 +30,13 @@ const Agent = () => {
   useEffect(() => {
     fetchHistory()
 
-    const eventSource = new EventSource(`http://localhost:3000/message/event?id=${userId}`)
+    const eventSource = new EventSource(`http://localhost:3000/message/event?id=${4}`)
 
     eventSource.onmessage = (e) => {
       const data = e.data
       if (!data) return
       const newMsg: AImessageInfo = {
-        id: Date.now(),
+        id: Date.now()*1000*5,
         user_id: userId,
         role: 'ai',
         content: data,
@@ -62,6 +63,11 @@ const Agent = () => {
 
   const sendMessage = async () => {
     if (!userInput.trim()) return
+    const data ={
+      time:Date.now()*1000*5*60,
+      text:userInput
+    }
+    CashText.setText(data)
     const newUserMsg: AImessageInfo = {
       id: Date.now(),
       user_id: userId,
@@ -72,9 +78,9 @@ const Agent = () => {
     setLoading(true)
     setMessages([...messagesRef.current, newUserMsg])
     setUserInput('')
-
+     
     try {
-      await Aichat({ content: await checkRag('ai-rag',userInput), id: userId })
+      await Aichat({ content: await checkRag('ai-rag',userInput), id: 4 ,text:userInput})
     } catch (err: any) {
       if (err?.response?.status === 401) {
         alert('请先登录')

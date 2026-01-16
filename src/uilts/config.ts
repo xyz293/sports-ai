@@ -1,4 +1,4 @@
 export const config = {
   baseURL:'/api',
-  timeout:10000
+  timeout:100000
 }

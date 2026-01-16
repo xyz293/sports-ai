@@ -26,3 +26,9 @@ export interface RagInfo {
     text: string
     time: string
 }
+
+
+export interface TextInfo {
+    time:number
+    text:string
+}
